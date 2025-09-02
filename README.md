@@ -50,7 +50,7 @@ minijava-compiler-x86/
 Install dependencies:
 ```bash
 pip install ply graphviz
-
+```
 You also need to have Graphviz installed on your system:
 
 Windows: Download installer [https://graphviz.org/download/]
@@ -58,8 +58,66 @@ Windows: Download installer [https://graphviz.org/download/]
 Linux (Debian/Ubuntu):
 ```bash
 sudo apt-get install graphviz
-
+```
 macOS (Homebrew):
 ```bash
 brew install graphviz
+```
 
+Compile a MiniJava program:
+```bash
+python main.py tests/SimplePrint.java
+```
+Example Workflow
+
+For the file tests/SimplePrint.java:
+```
+public class SimplePrint {
+    public static void main(String[] args) {
+        int a;
+        a = 5;
+        System.out.println(a);
+    }
+}
+```
+
+The compiler will generate:
+
+output/SimplePrint_tokens.txt → Token list
+
+output/SimplePrint.png → Parse tree visualization
+
+output/SimplePrint_tac.txt → Three-address code
+
+output/SimplePrint.asm → x86-style assembly
+
+🧪 Example Run
+```bash
+=== MiniJava Compiler (x86 backend) ===
+--- 1. Lexical Tokens ---
+Tokens saved to output/SimplePrint_tokens.txt
+
+--- 2. Parsing (Syntax Analysis) ---
+Parse tree saved to output/SimplePrint.png
+
+--- 3. Semantic Analysis ---
+No semantic errors.
+
+--- 4. IR (TAC) Generation ---
+TAC saved to output/SimplePrint_tac.txt
+
+--- 5. x86-Style Code Generation ---
+x86-style assembly saved to output/SimplePrint.asm
+```
+
+📌 Notes
+
+This project is for educational purposes (compiler design course).
+
+The x86 backend is simplified and not intended to run directly on a CPU, but demonstrates register allocation and assembly-like output.
+
+Extendable to support more MiniJava features (methods, arrays, objects).
+
+👨‍💻 Author
+
+Developed by Md. Iftekharul Islam as part of a Compiler Design project.
