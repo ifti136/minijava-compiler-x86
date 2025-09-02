@@ -22,6 +22,7 @@ It takes a simplified subset of Java (MiniJava) as input and translates it throu
 ---
 
 ## 📂 Project Structure
+```
 minijava-compiler-x86/
 │── main.py # Compiler driver
 │── compiler/
@@ -39,7 +40,7 @@ minijava-compiler-x86/
 │ │ └── tree_visualizer.py # Parse tree visualization
 │ └── tests/ # Place for sample test programs
 │── output/ # Generated tokens, TAC, assembly, trees
-
+```
 ---
 
 ## ⚙️ Requirements
